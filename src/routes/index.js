@@ -1,9 +1,16 @@
 import { Router } from "express";
 
-import { index } from "../controllers/index.js";
+import {
+  listURL,
+  shortenURL,
+  getURL,
+  updateURL,
+  deleteURL,
+} from "../controllers/urlController.js";
 
 const router = Router();
 
-router.route("/").get(index);
+router.route("/url").get(listURL).post(shortenURL);
+router.route("/url/:slug").get(getURL).put(updateURL).delete(deleteURL);
 
 export default router;
