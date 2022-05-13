@@ -1,0 +1,21 @@
+version: '3.9'
+
+services:
+  mongo:
+    image: 'bitnami/mongodb:latest'
+    env_file:
+      - .env
+
+  node:
+    build:
+      context: .
+      dockerfile: ${PWD}/.docker/node/Dockerfile
+      target: dev
+    env_file:
+      - .env
+    volumes:
+      - ./src:/code/src:rw
+    depends_on:
+      - mongo
+    ports:
+      - 5000:5000
