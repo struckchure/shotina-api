@@ -1,0 +1,21 @@
+{
+  "name": "shotina",
+  "version": "1.0.0",
+  "description": "url shortener",
+  "main": "src/index.js",
+  "author": "Mohammed Al Ameen",
+  "repository": "https://github.com/struckchure/shotina",
+  "license": "MIT",
+  "private": false,
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon src/index"
+  },
+  "dependencies": {
+    "express": "^4.18.1",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.16"
+  }
+}
